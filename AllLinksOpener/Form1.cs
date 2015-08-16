@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Diagnostics;
+using HtmlAgilityPack;
 
 namespace AllLinksOpener
 {
@@ -72,10 +73,15 @@ namespace AllLinksOpener
 			//foreach (string url in _urls)
 			for (int i = _pos; i < 5 + _pos; i++)
 			{
-				string url = listBox1.Items[i].ToString();
-				Process.Start(url);
-
+				if (i < listBox1.Items.Count)
+				{
+					string url = listBox1.Items[i].ToString();
+					Process.Start(url);
+					listBox1.SelectedIndex = i;
+				}
 			}
+			_pos += 5;
+			lblPos.Text = _pos.ToString();
 		}
 	}
 }
