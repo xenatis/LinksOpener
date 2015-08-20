@@ -70,7 +70,7 @@ namespace AllLinksOpener
 		int _pos = 0;
 		private void button3_Click(object sender, EventArgs e)
 		{
-			//foreach (string url in _urls)
+			//foreach (string url in _urls)asd
 			for (int i = _pos; i < 5 + _pos; i++)
 			{
 				if (i < listBox1.Items.Count)
